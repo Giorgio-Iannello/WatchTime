@@ -5,7 +5,7 @@
         android:icon="@drawable/ic_action_name"
         android:id="@+id/home"/>
     <item android:title="cerca"
-
+        android:icon="@drawable/ic_action_name"
         android:id="@+id/cerca"/>
     <item android:title="salvati"
         android:icon="@drawable/ic_action_name"
