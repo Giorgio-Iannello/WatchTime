@@ -19,6 +19,7 @@ public class Login extends AppCompatActivity {
         Intent reg = new Intent(Login.this, Registrazione.class);
 
         startActivity(reg);
+        //prova modifica
 
     }
 }
