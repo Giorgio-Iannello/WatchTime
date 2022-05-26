@@ -45,6 +45,9 @@ public class Login extends AppCompatActivity {
         }
         else{
 
+            Intent i = new Intent(getApplicationContext(), HomePage.class);
+            startActivity(i);
+
         }
 
     }

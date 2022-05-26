@@ -28,6 +28,10 @@
         <activity
             android:name=".Registrazione"
             android:label="Registrazione"></activity>
+
+        <activity
+            android:name=".HomePage"
+            android:label="HomePage"></activity>
     </application>
 
 </manifest>
