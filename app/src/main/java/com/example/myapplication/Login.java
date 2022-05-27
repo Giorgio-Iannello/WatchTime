@@ -29,10 +29,7 @@ public class Login extends AppCompatActivity {
     public void clickReg(View view) {
 
         Intent reg = new Intent(Login.this, Registrazione.class);
-
         startActivity(reg);
-
-
     }
 
     public void cLickAccedi(View view) {
@@ -40,14 +37,10 @@ public class Login extends AppCompatActivity {
         if(!usernameET.getText().toString().equals(username) || !passwordET.getText().toString().equals(password)){
             Toast toast = Toast.makeText(this, "Non sei registrato!", Toast. LENGTH_LONG);
             toast.show();
-
-
         }
         else{
-
-            Intent i = new Intent(getApplicationContext(), HomePage.class);
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
-
         }
 
     }
