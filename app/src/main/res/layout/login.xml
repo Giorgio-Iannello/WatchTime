@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,9 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:src="@drawable/logo"
-        android:layout_marginTop="75dp"
-
-        ></ImageView>
+        android:layout_marginTop="45dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,17 +22,14 @@
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:text="WatchTime"
-        android:textColor="@android:color/white"
-        android:textSize="48dp"
-
-
-        />
+        android:textColor="#fef4e8"
+        android:textSize="48sp" />
 
     <LinearLayout
-        android:layout_marginTop="350dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
         android:orientation="vertical">
 
         <EditText
@@ -44,90 +39,66 @@
             android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-            android:background="@android:color/white"
+            android:background="@drawable/border_radius"
+            android:inputType="text"
             android:hint="Username/Email"
-            android:padding="5dp"></EditText>
-
+            android:padding="5dp" />
 
         <EditText
             android:id="@+id/passwordET"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/usernameET"
-            android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:background="@android:color/white"
+            android:background="@drawable/border_radius"
             android:hint="Password"
             android:inputType="textPassword"
-            android:padding="5dp"/>
+            android:padding="5dp" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
 
             <CheckBox
                 android:id="@+id/spuntaRC"
-                android:layout_width="30dp"
-                android:layout_height="40dp"
-                android:layout_below="@+id/editTextTextPassword"
-                android:layout_marginStart="30dp"
-
-
-                android:layout_marginLeft="50dp"></CheckBox>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ricordami"
-                android:textColor="@android:color/white"
-                android:layout_marginLeft="0dp"></TextView>
-            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ricordami"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
 
-                <CheckBox
-                    android:id="@+id/spuntaPw"
-                    android:layout_width="30dp"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/editTextTextPassword"
-                    android:layout_marginStart="30dp"
-                    android:onClick="clickMP"
-
-
-                    android:layout_marginLeft="50dp"></CheckBox>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mostra password"
-                    android:textColor="@android:color/white"
-                    android:layout_marginLeft="0dp"></TextView>
-            </LinearLayout>
+            <CheckBox
+                android:id="@+id/spuntaPw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="clickMP"
+                android:text="Mostra password"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
         </LinearLayout>
-
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#13667F"
-            android:text="Accedi"
-            android:onClick="cLickAccedi"></Button>
+            android:textColor="@color/white"
+            android:onClick="cLickAccedi"
+            android:text="Accedi" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:onClick="clickReg"
             android:text="@string/sottolineato"
             android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:onClick="clickReg"
-            ></TextView>
-
-
+            android:textSize="18sp" />
     </LinearLayout>
-
-
-
-
 </RelativeLayout>
