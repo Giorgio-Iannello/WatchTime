@@ -1,11 +1,9 @@
-package com.example.myapplication;
+package com.example.application;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.application.R;
 
 public class Registrazione extends Activity {
 

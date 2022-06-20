@@ -1,4 +1,4 @@
-package com.example.myapplication.ui;
+package com.example.application.ui.user;
 
 import android.os.Bundle;
 
@@ -8,10 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.myapplication.R;
+import com.example.application.R;
 
 
-public class user_fragment extends Fragment {
+public class UserFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -1,4 +1,4 @@
-package com.example.myapplication.ui;
+package com.example.application.ui.searchbar;
 
 import android.os.Bundle;
 
@@ -8,9 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.myapplication.R;
+import com.example.application.R;
 
-public class search_fragment extends Fragment {
+public class SearchFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
