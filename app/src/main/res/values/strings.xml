@@ -1,10 +1,22 @@
 <resources>
     <string name="app_name">WatchTime</string>
-    <string name="sottolineato"><u>Non sei ancora iscritto? Registrati!</u> </string>
+    <string name="input_text_name">Nome</string>
+    <string name="input_text_email">Email</string>
+    <string name="input_text_username">Username</string>
+    <string name="username">Username/E-mail</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Ricordami</string>
+    <string name="show_password">Mostra password</string>
+    <string name="login_button">Accedi</string>
+    <string name="image_logo">logo</string>
+    <string name="underline"><u>Non sei ancora iscritto? Registrati!</u> </string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="confirm_password">Conferma password</string>
+    <string name="input_text_cognome">Cognome</string>
+    <string name="signup_button">Registrati</string>
+
 </resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_app_color">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/antic_slab_regular"
+        android:text="Spider-man"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TextTimeInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/antic_slab_regular"
+        android:text="2021 - 2h 28min "
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/ImageFilm"
+        android:layout_width="160dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextTimeInfo"
+        app:srcCompat="@drawable/image_film" />
+
+    <TextView
+        android:id="@+id/TextViewTag3"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="124dp"
+        android:text="Avventura"
+        android:textSize="8sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/TextViewTag2"
+        app:layout_constraintTop_toBottomOf="@+id/ImageFilm" />
+
+    <TextView
+        android:id="@+id/TextViewTag2"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="Azione"
+        android:textSize="8sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/TextViewTag3"
+        app:layout_constraintStart_toEndOf="@+id/TextViewTag1"
+        app:layout_constraintTop_toBottomOf="@+id/ImageFilm" />
+
+    <TextView
+        android:id="@+id/TextViewTag1"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="Fantastico"
+        android:textSize="8sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/TextViewTag2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ImageFilm" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

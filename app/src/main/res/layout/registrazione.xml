@@ -2,11 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_centerHorizontal="true"
-    android:background="#191919"
-    tools:context=".Login">
+    android:background="#191919">
 
     <ImageView
         android:id="@+id/logo"
@@ -20,79 +18,72 @@
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/logo"
-        android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
-        android:text="WatchTime"
+        android:text="@string/app_name"
         android:textColor="@android:color/white"
-        android:textSize="48dp" />
+        android:textSize="48sp" />
 
     <EditText
         android:layout_marginTop="40dp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:background="@drawable/border_radius"
-        android:hint="Nome"
+        android:hint="@string/input_text_name"
+        android:padding="5dp"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border_radius"
+        android:hint="@string/input_text_cognome"
         android:padding="5dp" />
 
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:background="@drawable/border_radius"
-        android:hint="Cognome"
+        android:hint="@string/input_text_username"
         android:padding="5dp" />
 
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:background="@drawable/border_radius"
-        android:hint="Username"
-        android:padding="5dp" />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/border_radius"
-        android:hint="Email"
+        android:hint="@string/input_text_email"
         android:padding="5dp"/>
 
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:background="@drawable/border_radius"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:padding="5dp" />
 
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:background="@drawable/border_radius"
-        android:hint="Conferma password"
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:padding="5dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrati"
+        android:text="@string/signup_button"
         android:textColor="#fef4e8"
         android:layout_gravity="center"
         android:backgroundTint="#13667F"/>
