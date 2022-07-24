@@ -23,7 +23,9 @@ public class Login extends AppCompatActivity {
         usernameET = (EditText) findViewById(R.id.usernameET);
         passwordET = (EditText) findViewById(R.id.passwordET);
         spuntaPw = (CheckBox) findViewById(R.id.spuntaPw);
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
 
+        startActivity(i);
     }
 
     public void clickReg(View view) {
