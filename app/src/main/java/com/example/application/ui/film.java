@@ -52,9 +52,9 @@ public class film {
         this.image = image;
     }
 
-    Drawable image;
-    String titolo;
-    String descrizione;
-    String durata;
-    String annoUscita;
+    private Drawable image;
+    private String titolo;
+    private String descrizione;
+    private String durata;
+    private String annoUscita;
 }
