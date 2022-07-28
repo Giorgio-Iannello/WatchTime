@@ -35,9 +35,7 @@
                 android:layout_height="120dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/robert_downey_jr" />
-
         </androidx.cardview.widget.CardView>
-
     </androidx.cardview.widget.CardView>
 
     <TextView

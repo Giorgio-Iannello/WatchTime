@@ -21,20 +21,22 @@
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/drawable/image.xml" value="0.164" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/drawable/navbar_item_color.xml" value="0.106" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_bookmark.xml" value="0.22" />
+        <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_bookmark.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_dashboard.xml" value="0.2466866182129115" />
-        <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_details.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_details.xml" value="0.22" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_notifications.xml" value="0.2466866182129115" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_search_fragment.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_user_fragment.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_user_profile.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_user_settings.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_watchparty.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_watchparty.xml" value="0.5" />
+        <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/fragment_watchparty_members.xml" value="0.22" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/homepage.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/item_commento.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/item_film.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/item_result_research.xml" value="0.4466666666666667" />
-        <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/login.xml" value="0.5" />
+        <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/login.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/layout/registrazione.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/Mario Peluso/StudioProjects/WatchTime/app/src/main/res/menu/navigation_bar.xml" value="0.16666666666666666" />
