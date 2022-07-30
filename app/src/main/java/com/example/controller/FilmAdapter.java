@@ -15,20 +15,28 @@ import com.bumptech.glide.Glide;
 import com.example.application.Film;
 import com.example.application.FilmDelegate;
 import com.example.application.R;
+import com.example.application.ui.PerTeDelegate;
 
 import java.util.ArrayList;
 
 public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
 
-    private Context context;
-    private FilmDelegate delegate;
-
-    public FilmAdapter(ArrayList<Film> listFilm, Context context, FilmDelegate delegate) {
+    public FilmAdapter(ArrayList<Film> listFilm, Context context, FilmDelegate delegate, int tipo) {
 
         this.listFilm = listFilm;
-        this.context=context;
-        this.delegate=delegate;
+        this.context = context;
+        this.delegate = delegate;
+        this.tipo = 1;
     }
+
+    public FilmAdapter(ArrayList<Film> listFilm1, Context context, PerTeDelegate delegate, int tipo) {
+
+        this.listFilm = listFilm1;
+        this.context=context;
+        this.delegatePerTe = delegate;
+        this.tipo = 0;
+    }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(View view) {
@@ -68,14 +76,24 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
         holder.leftArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                delegate.onLeftClick(position);
+
+                if(tipo == 1) {
+                    delegate.onLeftClick(position);
+                }else {
+                    delegatePerTe.onLeftClickPerTe(position);
+                }
             }
         });
 
         holder.rightArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (tipo == 1) {
                 delegate.onRightClick(position);
+                }else {
+                    delegatePerTe.onRightClickPerTe(position);
+                }
             }
         });
 
@@ -100,4 +118,8 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
     }
 
     private ArrayList<Film> listFilm;
+    private Context context;
+    private FilmDelegate delegate;
+    private PerTeDelegate delegatePerTe;
+    private int tipo;
 }

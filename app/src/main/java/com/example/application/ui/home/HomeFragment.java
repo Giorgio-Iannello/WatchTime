@@ -17,12 +17,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.application.Film;
 import com.example.application.FilmDelegate;
 import com.example.application.R;
+import com.example.application.ui.PerTeDelegate;
 import com.example.controller.FilmAdapter;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment implements FilmDelegate
-{
+public class HomeFragment extends Fragment implements FilmDelegate, PerTeDelegate {
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment implements FilmDelegate
         listFilm1.add(film3);
         listFilm1.add(film4);
 
-        adapter = new FilmAdapter(listFilm, requireContext(), this);
+        adapter = new FilmAdapter(listFilm, requireContext(), (FilmDelegate) this, 1);
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
         tendenze.setLayoutManager(layoutManager);
@@ -82,7 +82,7 @@ public class HomeFragment extends Fragment implements FilmDelegate
         tendenze.addItemDecoration(dividerItemDecoration);
         tendenze.setAdapter(adapter);
 
-        adapter1 = new FilmAdapter(listFilm1, requireContext(), this);
+        adapter1 = new FilmAdapter(listFilm1, requireContext(), (PerTeDelegate) this, 0);
         LinearLayoutManager layoutManager1
                 = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
         perTe.setLayoutManager(layoutManager1);
@@ -105,7 +105,6 @@ public class HomeFragment extends Fragment implements FilmDelegate
         }
 
         tendenze.scrollToPosition(newPos);
-        perTe.scrollToPosition(newPos);
     }
 
     @Override
@@ -120,26 +119,49 @@ public class HomeFragment extends Fragment implements FilmDelegate
         }
 
         tendenze.scrollToPosition(newPos);
+    }
+
+    @Override
+    public void seeDettagli(int idFilm) {
+
+        Navigation.findNavController(getView()).navigate(idFilm);
+    }
+
+    @Override
+    public void watchParty() {
+
+    }
+
+    @Override
+    public void onLeftClickPerTe(int position) {
+
+        int newPos;
+
+        if (position == 0) {
+            newPos = listFilm1.size() - 1;
+        }else {
+            newPos = position - 1;
+        }
+
         perTe.scrollToPosition(newPos);
     }
 
     @Override
-    public void seeDettagli(int idFilm)
-    {
-        View view = getView();
+    public void onRightClickPerTe(int position) {
 
-        Navigation.findNavController(view).navigate(idFilm);
-    }
+        int newPos;
 
-    @Override
-    public void watchParty()
-    {
+        if (position == listFilm1.size() - 1) {
+            newPos = 0;
+        }else {
+            newPos = position + 1;
+        }
 
+        perTe.scrollToPosition(newPos);
     }
 
     private RecyclerView tendenze;
     private RecyclerView perTe;
     private ArrayList<Film> listFilm;
     private ArrayList<Film> listFilm1;
-
 }
