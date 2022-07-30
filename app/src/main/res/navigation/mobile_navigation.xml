@@ -38,6 +38,6 @@
         tools:layout="@layout/fragment_watchparty" />
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.myapplication.DetailsFragment"
+        android:name="com.example.application.ui.details.DetailsFragment"
         android:label="DetailsFragment" />
 </navigation>

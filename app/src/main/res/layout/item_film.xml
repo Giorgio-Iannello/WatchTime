@@ -3,72 +3,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="350dp">
+    android:layout_height="420dp">
 
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="140dp"
-        android:layout_height="160dp"
-        android:layout_marginEnd="24dp"
-        android:scaleType="fitEnd"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_film" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="212dp"
-        android:layout_height="300dp"
+        android:id="@+id/imageViewTrailer"
+        android:layout_width="240dp"
+        android:layout_height="350dp"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_film" />
+        app:srcCompat="@drawable/spider_man" />
 
     <Button
         android:id="@+id/buttonDetails"
-        android:layout_width="110dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="138dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/blue"
         android:text="Dettagli"
         android:textColor="@color/white"
-        android:textSize="10sp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/lobbyButton"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewTrailer"
         tools:ignore="TouchTargetSizeCheck" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/lobbyButton"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="110dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="92dp"
+        android:layout_width="138dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/background_app_color"
         android:text="watchparty"
         android:textColor="@color/white"
-        android:textSize="10sp"
+        android:textSize="14sp"
         app:cornerRadius="3dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonDetails"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewTrailer"
         app:strokeColor="@color/blue"
         app:strokeWidth="1dp"
         tools:ignore="TouchTargetSizeCheck" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="140dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="24dp"
-        android:scaleType="fitStart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/image_film" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -76,8 +56,8 @@
         android:layout_height="35dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewTrailer"
+        app:layout_constraintTop_toTopOf="@+id/imageViewTrailer"
         app:srcCompat="@drawable/star" />
 
     <TextView
@@ -98,8 +78,32 @@
         android:layout_height="35dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/imageViewTrailer"
+        app:layout_constraintTop_toTopOf="@+id/imageViewTrailer"
         app:srcCompat="@drawable/ic_bookmark" />
+
+    <ImageView
+        android:id="@+id/leftArrow"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewTrailer"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewTrailer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewTrailer"
+        app:layout_constraintVertical_bias="0.501"
+        app:srcCompat="@drawable/ic_left_arrow" />
+
+    <ImageView
+        android:id="@+id/rightArrow"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewTrailer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewTrailer"
+        app:layout_constraintTop_toTopOf="@+id/imageViewTrailer"
+        app:layout_constraintVertical_bias="0.501"
+        app:srcCompat="@drawable/ic_right_arrow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

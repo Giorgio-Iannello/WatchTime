@@ -1,6 +1,5 @@
 package com.example.controller;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,11 +29,11 @@ public class CommentiDetailsAdapter extends RecyclerView.Adapter<CommentiDetails
 
     public CommentiDetailsAdapter(ArrayList<String> vettCommenti)
     {
-        this.vettCommenti=vettCommenti;
+        this.vettCommenti = vettCommenti;
     }
     public void changeVett(ArrayList<String> vettCommenti)
     {
-        this.vettCommenti=vettCommenti;
+        this.vettCommenti = vettCommenti;
         notifyAll();
     }
     @Override

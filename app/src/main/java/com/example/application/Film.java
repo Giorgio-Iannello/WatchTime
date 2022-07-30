@@ -1,15 +1,24 @@
-package com.example.application.ui;
+package com.example.application;
 
 import android.graphics.drawable.Drawable;
 
-public class film {
+public class Film {
 
-    public film(Drawable image, String titolo, String descrizione, String durata, String annoUscita){
+    public Film(int id, int image, String titolo, String descrizione, String durata, String annoUscita){
+        this.id = id;
         this.image = image;
         this.titolo = titolo;
         this.descrizione = descrizione;
         this.durata = durata;
         this.annoUscita = annoUscita;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitolo() {
@@ -44,15 +53,16 @@ public class film {
         this.descrizione = descrizione;
     }
 
-    public Drawable getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(Drawable image) {
+    public void setImage(int image) {
         this.image = image;
     }
 
-    private Drawable image;
+    private int id;
+    private int image;
     private String titolo;
     private String descrizione;
     private String durata;
