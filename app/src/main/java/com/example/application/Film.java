@@ -1,16 +1,17 @@
 package com.example.application;
 
-import android.graphics.drawable.Drawable;
 
-public class Film {
+import java.io.Serializable;
 
-    public Film(int id, int image, String titolo, String descrizione, String durata, String annoUscita){
+public class Film implements Serializable {
+
+    public Film(int id, int image, String titolo, String descrizione, String durata, String idVideo){
         this.id = id;
         this.image = image;
         this.titolo = titolo;
         this.descrizione = descrizione;
         this.durata = durata;
-        this.annoUscita = annoUscita;
+        this.idVideo = idVideo;
     }
 
     public int getId() {
@@ -37,14 +38,6 @@ public class Film {
         this.durata = durata;
     }
 
-    public String getAnnoUscita() {
-        return annoUscita;
-    }
-
-    public void setAnnoUscita(String annoUscita) {
-        this.annoUscita = annoUscita;
-    }
-
     public String getDescrizione() {
         return descrizione;
     }
@@ -61,10 +54,18 @@ public class Film {
         this.image = image;
     }
 
+    public String getIdVideo() {
+        return idVideo;
+    }
+
+    public void setIdVideo(String idVideo) {
+        this.idVideo = idVideo;
+    }
+
     private int id;
     private int image;
     private String titolo;
     private String descrizione;
     private String durata;
-    private String annoUscita;
+    private String idVideo;
 }

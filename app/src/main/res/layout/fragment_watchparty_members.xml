@@ -9,21 +9,21 @@
     <Button
         android:id="@+id/chatButton"
         android:layout_width="0dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="32dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/blue"
         android:text="Chat"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/lobbyButton"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginStart="19dp"
         android:layout_marginTop="24dp"
         android:text="Stanza"
@@ -37,14 +37,14 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintStart_toEndOf="@+id/lobbyButton"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
         app:srcCompat="@drawable/ic_exit" />
 
     <ScrollView
@@ -103,7 +103,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_weight="1"
                     android:width="0dp"
-                    android:text="Beniamino"
+                    android:text="Franco"
                     android:textAlignment="textStart"
                     android:textColor="@color/white" />
 

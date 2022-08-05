@@ -1,43 +1,40 @@
-package com.example.application.ui.user;
+package com.example.application.ui.watchparty;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-
 import com.example.application.R;
 
+public class WatchPartyMembers extends Fragment
+{
 
-public class UserFragment extends Fragment {
-
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_user_profile, container, false);
+        return inflater.inflate(R.layout.fragment_watchparty_members, container, false);
     }
 
-    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        modifica = view.findViewById(R.id.buttonModify);
-        esci = view.findViewById(R.id.buttonLogOut);
+        chat = view.findViewById(R.id.chatButton);
 
-        modifica.setOnClickListener(new View.OnClickListener() {
+        chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.userInfo);
+                Navigation.findNavController(v).navigate(R.id.navigation_watch_party);
             }
         });
     }
 
-    private Button modifica;
-    private Button esci;
+    private Button chat;
 }

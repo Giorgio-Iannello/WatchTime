@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.application.controller;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -7,15 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.application.Film;
 import com.example.application.FilmDelegate;
+import com.example.application.MainActivity;
 import com.example.application.R;
-import com.example.application.ui.PerTeDelegate;
+import com.example.application.PerTeDelegate;
 
 import java.util.ArrayList;
 
@@ -69,9 +70,7 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull FilmAdapter.ViewHolder holder, int position) {
 
-        Film film = listFilm.get(position);
-
-        Glide.with(context).load(film.getImage()).into(holder.copertina);
+        Glide.with(context).load(listFilm.get(position).getImage()).into(holder.copertina);
 
         holder.leftArrow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,14 +99,28 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
         holder.dettagli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                delegate.seeDettagli(film.getId());
+                if(tipo==1)
+                {
+                    delegate.seeDettagli(position);
+                }
+                else
+                {
+                    delegatePerTe.dettagliPerTe(position);
+                }
             }
         });
 
         holder.watchparty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                MainActivity.hasWatchParty=true;
+                if (listFilm.get(position).getTitolo().equals("Spider-Man") && tipo == 1) {
+                    delegate.watchParty();
+                } else if (listFilm.get(position).getTitolo().equals("Spider-Man") && tipo == 0) {
+                    delegatePerTe.watchpartyPerTe();
+                }else {
+                    Toast.makeText(v.getContext(), "Fai parte già di un watchparty: Spider-man", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

@@ -9,7 +9,7 @@
     tools:context=".ui.searchbar.SearchFragment">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextResearch"
         android:layout_width="0dp"
         android:layout_height="44dp"
         android:layout_marginStart="22dp"
@@ -27,38 +27,15 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <Button
-        android:id="@+id/filterButton"
-        android:layout_height="42dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="14dp"
-        android:backgroundTint="@color/blue"
-        android:text="Filtra"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/orderButton"
-        android:layout_height="42dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="14dp"
-        android:backgroundTint="@color/blue"
-        android:text="Ordina"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/filterButton"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        tools:ignore="TouchTargetSizeCheck" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filterButton" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextResearch" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -67,7 +44,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:src="@drawable/ic_search"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName" />
+        app:layout_constraintStart_toStartOf="@+id/editTextResearch"
+        app:layout_constraintTop_toTopOf="@+id/editTextResearch" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,39 +8,57 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.application.ui.home.HomeFragment"
-        android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navigation_home_to_detailsFragment"
             app:destination="@id/detailsFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_navigation_watch_party"
-            app:destination="@id/navigation_watch_party" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_bookmark"
         android:name="com.example.application.ui.bookmark.BookmarkFragment"
-        android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_bookmark" />
 
     <fragment
         android:id="@+id/navigation_searchbar"
         android:name="com.example.application.ui.searchbar.SearchFragment"
-        android:label="fragment_search_fragment"
-        tools:layout="@layout/fragment_search_fragment" />
+        tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/navigation_user"
         android:name="com.example.application.ui.user.UserFragment"
-        android:label="fragment_user_fragment"
-        tools:layout="@layout/fragment_user_profile" />
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_navigation_user_to_userInfo"
+            app:destination="@id/userInfo" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_watch_party"
         android:name="com.example.application.ui.watchparty.WatchPartyFragment"
-        android:label="fragment_watchparty"
-        tools:layout="@layout/fragment_watchparty" />
+        tools:layout="@layout/fragment_watchparty" >
+        <action
+            android:id="@+id/action_navigation_watch_party_to_watchPartyMembers"
+            app:destination="@id/watchPartyMembers" />
+        <action
+            android:id="@+id/action_navigation_watch_party_to_exitWatchParty"
+            app:destination="@id/exitWatchParty" />
+    </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.application.ui.details.DetailsFragment"
-        android:label="DetailsFragment" />
+        android:name="com.example.application.ui.details.DetailsFragment" >
+        <argument
+            android:name="film"
+            app:argType="com.example.application.Film" />
+    </fragment>
+    <fragment
+        android:id="@+id/watchPartyMembers"
+        android:name="com.example.application.ui.watchparty.WatchPartyMembers"
+        android:label="WatchPartyMembers" />
+    <fragment
+        android:id="@+id/exitWatchParty"
+        android:name="com.example.application.ui.watchparty.ExitWatchParty"
+        android:label="ExitWatchParty" />
+    <fragment
+        android:id="@+id/userInfo"
+        android:name="com.example.application.ui.user.UserInfo"
+        android:label="UserInfo" />
 </navigation>
