@@ -6,7 +6,7 @@ public interface PerTeDelegate {
 
     void onRightClickPerTe(int position);
 
-    void dettagliPerTe(int idFilm);
+    void dettagliPerTe(int position);
 
     void  watchpartyPerTe();
 }

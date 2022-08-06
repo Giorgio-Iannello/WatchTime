@@ -12,6 +12,7 @@ public class Film implements Serializable {
         this.descrizione = descrizione;
         this.durata = durata;
         this.idVideo = idVideo;
+        this.isSaved = false;
     }
 
     public int getId() {
@@ -62,8 +63,17 @@ public class Film implements Serializable {
         this.idVideo = idVideo;
     }
 
+    public boolean isSaved() {
+        return isSaved;
+    }
+
+    public void setSaved(boolean saved) {
+        isSaved = saved;
+    }
+
     private int id;
     private int image;
+    private boolean isSaved;
     private String titolo;
     private String descrizione;
     private String durata;

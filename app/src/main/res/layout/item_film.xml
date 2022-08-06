@@ -73,7 +73,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView9" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imageViewSalva"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="5dp"

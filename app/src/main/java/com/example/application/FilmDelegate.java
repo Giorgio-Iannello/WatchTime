@@ -9,4 +9,5 @@ public interface FilmDelegate
     void seeDettagli(int idFilm);
 
     void watchParty();
+
 }

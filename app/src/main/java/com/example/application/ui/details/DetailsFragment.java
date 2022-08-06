@@ -17,10 +17,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.application.Film;
 import com.example.application.R;
 import com.example.application.controller.CommentiDetailsAdapter;
+import com.example.application.ui.home.HomeFragment;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
@@ -39,6 +41,7 @@ public class DetailsFragment extends Fragment {
 
             titolo = view.findViewById(R.id.textViewTitle);
             durata = view.findViewById(R.id.textViewDuration);
+            wp = view.findViewById(R.id.textViewWP);
             copertina = view.findViewById(R.id.imageViewFilm);
             descrizione = view.findViewById(R.id.textViewDescription);
             recyclerView = view.findViewById(R.id.listCommenti);
@@ -73,6 +76,17 @@ public class DetailsFragment extends Fragment {
                 recyclerView.addItemDecoration(dividerItemDecoration);
                 recyclerView.setAdapter(adapter);
 
+                wp.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(film.getTitolo().equals("Spider-Man")) {
+                            Navigation.findNavController(view).navigate(R.id.navigation_watch_party);
+                        }else {
+                            Toast.makeText(requireContext(), "Partecipi già ad un watchparty: Spider-Man", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
                 btnInvio.setOnClickListener(v -> {
                     String text = inputCommento.getText().toString().trim();
                     if (text.length() > 0) {
@@ -84,10 +98,12 @@ public class DetailsFragment extends Fragment {
             } else {
                 Navigation.findNavController(view).popBackStack();
             }
+
         }
 
         private TextView titolo;
         private TextView durata;
+        private TextView wp;
         private ImageView copertina;
         private TextView descrizione;
         private YouTubePlayerView idVideo;

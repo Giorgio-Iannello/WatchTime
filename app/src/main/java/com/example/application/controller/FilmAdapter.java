@@ -17,6 +17,7 @@ import com.example.application.FilmDelegate;
 import com.example.application.MainActivity;
 import com.example.application.R;
 import com.example.application.PerTeDelegate;
+import com.example.application.ui.bookmark.BookmarkFragment;
 
 import java.util.ArrayList;
 
@@ -45,15 +46,19 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
             super(view);
 
             copertina = view.findViewById(R.id.imageViewTrailer);
+            bookmark = view.findViewById(R.id.imageViewSalva);
             leftArrow = view.findViewById(R.id.leftArrow);
             rightArrow = view.findViewById(R.id.rightArrow);
+            salva = view.findViewById(R.id.imageViewSalva);
             dettagli = view.findViewById(R.id.buttonDetails);
             watchparty = view.findViewById(R.id.lobbyButton);
         }
 
         ImageView copertina;
+        ImageView bookmark;
         ImageView leftArrow;
         ImageView rightArrow;
+        ImageView salva;
         Button dettagli;
         Button watchparty;
     }
@@ -66,7 +71,7 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
         return new ViewHolder(view);
     }
 
-    @SuppressLint("RecyclerView")
+    @SuppressLint({"RecyclerView", "NotifyDataSetChanged"})
     @Override
     public void onBindViewHolder(@NonNull FilmAdapter.ViewHolder holder, int position) {
 
@@ -96,6 +101,13 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
             }
         });
 
+        if(listFilm.get(position).isSaved()) {
+
+            holder.bookmark.setImageResource(R.drawable.ic_baseline_bookmark_full);
+        }
+        else
+            holder.bookmark.setImageResource(R.drawable.ic_bookmark);
+
         holder.dettagli.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +134,21 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
                     Toast.makeText(v.getContext(), "Fai parte già di un watchparty: Spider-man", Toast.LENGTH_LONG).show();
                 }
             }
+        });
+
+        holder.salva.setOnClickListener(v -> {
+            boolean cista = BookmarkFragment.listFilm.stream().anyMatch(film->film.getId() == listFilm.get(position).getId());
+            if(cista)
+            {
+                BookmarkFragment.listFilm.removeIf(film->film.getId()==listFilm.get(position).getId());
+                listFilm.get(position).setSaved(false);
+            }
+            else
+            {
+                BookmarkFragment.listFilm.add(listFilm.get(position));
+                listFilm.get(position).setSaved(true);
+            }
+            notifyDataSetChanged();
         });
     }
 

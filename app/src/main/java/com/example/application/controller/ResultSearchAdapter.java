@@ -17,27 +17,27 @@ import com.example.application.Film;
 import com.example.application.R;
 
 import java.util.ArrayList;
-import java.util.NavigableMap;
 
 
-public class ResultSearchAdapter extends RecyclerView.Adapter<ResultSearchAdapter.ViewHolder>
-{
+
+public class ResultSearchAdapter extends RecyclerView.Adapter<ResultSearchAdapter.ViewHolder> {
+
     @SuppressLint("NotifyDataSetChanged")
-    public void clearVett()
-    {
+    public void clearVett() {
+
         listFilm.clear();
         notifyDataSetChanged();
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void changeVett(ArrayList<Film> listFilm)
-    {
-        this.listFilm=listFilm;
+    public void changeVett(ArrayList<Film> listFilm) {
+
+        this.listFilm = listFilm;
         notifyDataSetChanged();
     }
-    public ResultSearchAdapter (ArrayList<Film> listFilm, Context context,View view)
-    {
-        this.view=view;
+
+    public ResultSearchAdapter (ArrayList<Film> listFilm, Context context,View view) {
+        this.view = view;
         this.listFilm = listFilm;
         this.context = context;
     }
@@ -53,13 +53,14 @@ public class ResultSearchAdapter extends RecyclerView.Adapter<ResultSearchAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ResultSearchAdapter.ViewHolder holder, int position) {
-        Film f=listFilm.get(position);
+
+        Film f = listFilm.get(position);
         holder.titolo.setText(f.getTitolo());
         holder.foto.setImageResource(f.getImage());
         holder.itemView.setOnClickListener(v -> {
-            Bundle bundle=new Bundle();
-            bundle.putSerializable("film",f);
-            Navigation.findNavController(view).navigate(R.id.detailsFragment,bundle);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("film", f);
+            Navigation.findNavController(view).navigate(R.id.detailsFragment, bundle);
         });
     }
 
@@ -68,15 +69,16 @@ public class ResultSearchAdapter extends RecyclerView.Adapter<ResultSearchAdapte
         return listFilm.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder
-    {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+
         ImageView foto;
         TextView titolo;
-        public ViewHolder(@NonNull View itemView)
-        {
+
+        public ViewHolder(@NonNull View itemView) {
+
             super(itemView);
-            foto=itemView.findViewById(R.id.imageViewResult);
-            titolo=itemView.findViewById(R.id.textView4);
+            foto = itemView.findViewById(R.id.imageViewResult);
+            titolo = itemView.findViewById(R.id.textView4);
         }
     }
 

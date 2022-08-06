@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +21,7 @@ import com.example.application.FilmDelegate;
 import com.example.application.R;
 import com.example.application.PerTeDelegate;
 import com.example.application.controller.FilmAdapter;
+import com.example.application.ui.bookmark.BookmarkFragment;
 
 import java.util.ArrayList;
 
@@ -31,20 +33,10 @@ public class HomeFragment extends Fragment implements FilmDelegate, PerTeDelegat
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
-
-
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        super.onViewCreated(view, savedInstanceState);
-        this.view = view;
-
-        FilmAdapter adapter;
-        FilmAdapter adapter1;
-
-        tendenze = view.findViewById(R.id.recyclerViewTendenze);
-        perTe = view.findViewById(R.id.recyclerViewPerTe);
-
+    public void onCreate(@Nullable Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
         listFilm = new ArrayList<>();
         listFilm1 = new ArrayList<>();
 
@@ -75,6 +67,20 @@ public class HomeFragment extends Fragment implements FilmDelegate, PerTeDelegat
         listFilm1.add(film2);
         listFilm1.add(film3);
         listFilm1.add(film4);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        super.onViewCreated(view, savedInstanceState);
+        this.view = view;
+
+        FilmAdapter adapter;
+        FilmAdapter adapter1;
+
+        tendenze = view.findViewById(R.id.recyclerViewTendenze);
+        perTe = view.findViewById(R.id.recyclerViewPerTe);
 
         adapter = new FilmAdapter(listFilm, requireContext(), (FilmDelegate) this, 1);
         LinearLayoutManager layoutManager
@@ -139,6 +145,7 @@ public class HomeFragment extends Fragment implements FilmDelegate, PerTeDelegat
 
         Navigation.findNavController(view).navigate(R.id.navigation_watch_party);
     }
+
 
     @Override
     public void onLeftClickPerTe(int position) {

@@ -8,9 +8,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.application.Film;
 import com.example.application.R;
+import com.example.application.controller.FilmSavedAdapter;
+
+import java.util.ArrayList;
 
 public class BookmarkFragment extends Fragment {
 
@@ -23,5 +30,19 @@ public class BookmarkFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        recyclerViewFilm = view.findViewById(R.id.recyclerViewFilmSaved);
+
+        FilmSavedAdapter adapter = new FilmSavedAdapter(listFilm, getContext());
+        GridLayoutManager linearLayoutManager
+                = new GridLayoutManager(requireContext(),2);
+        recyclerViewFilm.setLayoutManager(linearLayoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerViewFilm.getContext(),
+                linearLayoutManager.getOrientation());
+        recyclerViewFilm.addItemDecoration(dividerItemDecoration);
+        recyclerViewFilm.setAdapter(adapter);
+
     }
+
+    public static ArrayList<Film> listFilm = new ArrayList<>();
+    private RecyclerView recyclerViewFilm;
 }

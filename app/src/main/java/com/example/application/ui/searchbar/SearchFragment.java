@@ -25,27 +25,28 @@ import com.example.application.controller.ResultSearchAdapter;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class SearchFragment extends Fragment
-{
-    private ArrayList<Film> filterFilm(String text)
-    {
+public class SearchFragment extends Fragment {
+    private ArrayList<Film> filterFilm(String text) {
         ArrayList<Film> newList=new ArrayList<>();
         for(Film f:listFilm)
         {
-            if(f.getTitolo().toLowerCase(Locale.ROOT).contains(text))
+            if (f.getTitolo().toLowerCase(Locale.ROOT).contains(text))
                 newList.add(f);
         }
         return newList;
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_search, container, false);
     }
+
     private ArrayList<Film> listFilm;
     private EditText searchBar;
     private RecyclerView recyclerView;
     private ResultSearchAdapter adapter;
+
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
 
@@ -75,19 +76,14 @@ public class SearchFragment extends Fragment
             public void onTextChanged(CharSequence s, int start,
                                       int before, int count)
             {
-                if(s.length()>2)
-                {
-                    ArrayList<Film> filter=filterFilm(s.toString());
-                    if(filter.size()>0)
-                    {
+                if(s.length() > 2) {
+                    ArrayList<Film> filter = filterFilm(s.toString());
+                    if (filter.size() > 0) {
                         adapter.changeVett(filter);
-                    }
-                    else
-                    {
+                    }else {
                         adapter.clearVett();
                     }
-                }
-                else
+                }else
                     adapter.clearVett();
             }
         });
