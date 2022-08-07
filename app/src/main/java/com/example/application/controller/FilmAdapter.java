@@ -125,13 +125,11 @@ public class FilmAdapter extends RecyclerView.Adapter<FilmAdapter.ViewHolder> {
         holder.watchparty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.hasWatchParty=true;
-                if (listFilm.get(position).getTitolo().equals("Spider-Man") && tipo == 1) {
+
+                if (tipo == 1) {
                     delegate.watchParty();
-                } else if (listFilm.get(position).getTitolo().equals("Spider-Man") && tipo == 0) {
+                }else  {
                     delegatePerTe.watchpartyPerTe();
-                }else {
-                    Toast.makeText(v.getContext(), "Fai parte già di un watchparty: Spider-man", Toast.LENGTH_LONG).show();
                 }
             }
         });

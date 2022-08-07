@@ -1,13 +1,13 @@
 package com.example.application.ui.watchparty;
 
-import android.content.DialogInterface;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,70 +15,108 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.application.MainActivity;
 import com.example.application.R;
+import com.google.android.material.button.MaterialButton;
 
 public class WatchPartyFragment extends Fragment {
+    private void modeExit() {
+        exitText.setVisibility(View.VISIBLE);
+        chat.setVisibility(View.INVISIBLE);
+        stanza.setVisibility(View.INVISIBLE);
+        esci.setVisibility(View.INVISIBLE);
+        text.setVisibility(View.INVISIBLE);
+        send.setVisibility(View.INVISIBLE);
+        testo.setVisibility(View.INVISIBLE);
+        scrollView.setVisibility(View.INVISIBLE);
+    }
 
+    private void modeMain() {
+        exitText.setVisibility(View.INVISIBLE);
+        chat.setVisibility(View.VISIBLE);
+        stanza.setVisibility(View.VISIBLE);
+        esci.setVisibility(View.VISIBLE);
+        stanza.setBackgroundColor(getResources().getColor(R.color.background_app_color));
+        chat.setBackgroundColor(getResources().getColor(R.color.blue));
+        text.setVisibility(View.VISIBLE);
+        send.setVisibility(View.VISIBLE);
+        testo.setVisibility(View.VISIBLE);
+        scrollView.setVisibility(View.INVISIBLE);
+    }
+
+    private void userMode() {
+        exitText.setVisibility(View.INVISIBLE);
+        chat.setVisibility(View.VISIBLE);
+        stanza.setVisibility(View.VISIBLE);
+        stanza.setBackgroundColor(getResources().getColor(R.color.blue));
+        chat.setBackgroundColor(getResources().getColor(R.color.background_app_color));
+        esci.setVisibility(View.VISIBLE);
+        text.setVisibility(View.INVISIBLE);
+        send.setVisibility(View.INVISIBLE);
+        testo.setVisibility(View.INVISIBLE);
+        scrollView.setVisibility(View.VISIBLE);
+    }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
-        if(!MainActivity.hasWatchParty)
-        {
-            Navigation.findNavController(view).navigate(R.id.exitWatchParty);
-        }
-        else
-        {
-            chat = view.findViewById(R.id.chatButton);
-            stanza = view.findViewById(R.id.lobbyButton);
-            esci = view.findViewById(R.id.imageViewEsci);
-            text=view.findViewById(R.id.editTextTextPersonName2);
-            send=view.findViewById(R.id.imageViewSend);
-            testo=view.findViewById(R.id.editTextChat);
-            mess="Azione davvero incredibile!";
-            text.setText(mess);
+        chat = view.findViewById(R.id.chatButton);
+        stanza = view.findViewById(R.id.lobbyButton);
+        esci = view.findViewById(R.id.imageViewEsci);
+        text = view.findViewById(R.id.editTextTextPersonName2);
+        send = view.findViewById(R.id.imageViewSend);
+        testo = view.findViewById(R.id.editTextChat);
+        exitText=view.findViewById(R.id.textView5);
+        scrollView=view.findViewById(R.id.scrollView3);
 
-            send.setOnClickListener(view1 -> {
-                String newMess=testo.getText().toString().trim();
-                if (newMess.length()>0) {
-                    mess+="\n"+newMess;
-                }
-                text.setText(mess);
-                testo.setText("");
-            });
+            if (MainActivity.hasWatchParty) {
+                modeMain();
+                send.setOnClickListener(view1 -> {
+                    String newMess = testo.getText().toString().trim();
 
-            chat.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Navigation.findNavController(v).navigate(R.id.navigation_watch_party);
-                }
-            });
+                    if (newMess.length() > 0) {
+                        text.append("\n" + newMess);
+                    }
+                });
 
-            stanza.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Navigation.findNavController(v).navigate(R.id.watchPartyMembers);
-                }
-            });
+                chat.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        modeMain();
+                    }
+                });
 
-            esci.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-                    builder.setTitle("Conferma uscita")
-                            .setMessage("Sei sicuro di voler abbandonare il party?")
-                            .setPositiveButton("Conferma", (dialog, id) -> {
-                                MainActivity.hasWatchParty=false;
-                                Navigation.findNavController(v).navigate(R.id.exitWatchParty);
-                            })
-                            .setNegativeButton("Annulla", (dialog, id) -> {
-                            });
-                    builder.create().show();
-                }
-            });
-        }
+                stanza.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        userMode();
+                    }
+                });
+
+                esci.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+                        builder.setTitle("Conferma uscita")
+                                .setMessage("Sei sicuro di voler abbandonare il party?")
+                                .setPositiveButton("Conferma", (dialog, id) -> {
+                                    MainActivity.hasWatchParty = false;
+                                    modeExit();
+                                })
+                                .setNegativeButton("Annulla", (dialog, id) -> {
+                                });
+                        builder.create().show();
+                    }
+                });
+            }
+            else
+            {
+                modeExit();
+            }
+
     }
 
     @Override
@@ -87,11 +125,12 @@ public class WatchPartyFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_watchparty, container, false);
     }
 
-    private Button chat;
-    private Button stanza;
+    private MaterialButton chat;
+    private MaterialButton stanza;
     private ImageView esci;
     private TextView text;
     private ImageView send;
     private EditText testo;
-    private String mess;
+    private TextView exitText;
+    private ScrollView scrollView;
 }

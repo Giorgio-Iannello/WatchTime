@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_home">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -31,17 +31,7 @@
             android:id="@+id/action_navigation_user_to_userInfo"
             app:destination="@id/userInfo" />
     </fragment>
-    <fragment
-        android:id="@+id/navigation_watch_party"
-        android:name="com.example.application.ui.watchparty.WatchPartyFragment"
-        tools:layout="@layout/fragment_watchparty" >
-        <action
-            android:id="@+id/action_navigation_watch_party_to_watchPartyMembers"
-            app:destination="@id/watchPartyMembers" />
-        <action
-            android:id="@+id/action_navigation_watch_party_to_exitWatchParty"
-            app:destination="@id/exitWatchParty" />
-    </fragment>
+
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.application.ui.details.DetailsFragment" >
@@ -50,13 +40,9 @@
             app:argType="com.example.application.Film" />
     </fragment>
     <fragment
-        android:id="@+id/watchPartyMembers"
-        android:name="com.example.application.ui.watchparty.WatchPartyMembers"
-        android:label="WatchPartyMembers" />
-    <fragment
-        android:id="@+id/exitWatchParty"
-        android:name="com.example.application.ui.watchparty.ExitWatchParty"
-        android:label="ExitWatchParty" />
+        android:id="@+id/navigation_watch_party"
+        android:name="com.example.application.ui.watchparty.WatchPartyFragment" />
+
     <fragment
         android:id="@+id/userInfo"
         android:name="com.example.application.ui.user.UserInfo"

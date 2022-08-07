@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.application.Film;
 import com.example.application.FilmDelegate;
+import com.example.application.MainActivity;
 import com.example.application.R;
 import com.example.application.PerTeDelegate;
 import com.example.application.controller.FilmAdapter;
@@ -67,7 +68,6 @@ public class HomeFragment extends Fragment implements FilmDelegate, PerTeDelegat
         listFilm1.add(film2);
         listFilm1.add(film3);
         listFilm1.add(film4);
-
     }
 
     @Override
@@ -81,6 +81,7 @@ public class HomeFragment extends Fragment implements FilmDelegate, PerTeDelegat
 
         tendenze = view.findViewById(R.id.recyclerViewTendenze);
         perTe = view.findViewById(R.id.recyclerViewPerTe);
+
 
         adapter = new FilmAdapter(listFilm, requireContext(), (FilmDelegate) this, 1);
         LinearLayoutManager layoutManager
@@ -99,6 +100,7 @@ public class HomeFragment extends Fragment implements FilmDelegate, PerTeDelegat
                 layoutManager.getOrientation());
         perTe.addItemDecoration(dividerItemDecoration1);
         perTe.setAdapter(adapter1);
+
     }
 
     @Override
@@ -143,7 +145,12 @@ public class HomeFragment extends Fragment implements FilmDelegate, PerTeDelegat
     @Override
     public void watchParty() {
 
-        Navigation.findNavController(view).navigate(R.id.navigation_watch_party);
+        if (!MainActivity.hasWatchParty) {
+            MainActivity.hasWatchParty = true;
+            Navigation.findNavController(view).navigate(R.id.navigation_watch_party);
+        }else {
+            Toast.makeText(requireContext(), "Partecipi già ad un WatchParty", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -184,9 +191,15 @@ public class HomeFragment extends Fragment implements FilmDelegate, PerTeDelegat
     }
 
     @Override
-    public void watchpartyPerTe() {
-
-        Navigation.findNavController(view).navigate(R.id.navigation_watch_party);
+    public void watchpartyPerTe()
+    {
+        if (!MainActivity.hasWatchParty)
+        {
+            MainActivity.hasWatchParty = true;
+            Navigation.findNavController(view).navigate(R.id.navigation_watch_party);
+        }else {
+            Toast.makeText(requireContext(), "Partecipi già ad un WatchParty", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private View view;

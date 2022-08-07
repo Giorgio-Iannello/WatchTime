@@ -19,7 +19,7 @@ import com.example.application.controller.FilmSavedAdapter;
 
 import java.util.ArrayList;
 
-public class BookmarkFragment extends Fragment {
+public class BookmarkFragment extends Fragment implements BookmarkDelegate {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class BookmarkFragment extends Fragment {
 
         recyclerViewFilm = view.findViewById(R.id.recyclerViewFilmSaved);
 
-        FilmSavedAdapter adapter = new FilmSavedAdapter(listFilm, getContext());
+        FilmSavedAdapter adapter = new FilmSavedAdapter(listFilm, getContext(),this);
         GridLayoutManager linearLayoutManager
                 = new GridLayoutManager(requireContext(),2);
         recyclerViewFilm.setLayoutManager(linearLayoutManager);
@@ -45,4 +45,10 @@ public class BookmarkFragment extends Fragment {
 
     public static ArrayList<Film> listFilm = new ArrayList<>();
     private RecyclerView recyclerViewFilm;
+
+    @Override
+    public void deleteItem(int position)
+    {
+        listFilm.remove(position);
+    }
 }

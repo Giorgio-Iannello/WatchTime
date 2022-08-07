@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.application.Film;
+import com.example.application.MainActivity;
 import com.example.application.R;
 import com.example.application.controller.CommentiDetailsAdapter;
 import com.example.application.ui.home.HomeFragment;
@@ -79,10 +80,10 @@ public class DetailsFragment extends Fragment {
                 wp.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(film.getTitolo().equals("Spider-Man")) {
+                        if (!MainActivity.hasWatchParty) {
                             Navigation.findNavController(view).navigate(R.id.navigation_watch_party);
-                        }else {
-                            Toast.makeText(requireContext(), "Partecipi già ad un watchparty: Spider-Man", Toast.LENGTH_SHORT).show();
+                        }else if(MainActivity.hasWatchParty){
+                            Toast.makeText(requireContext(), "Partecipi già ad un watchparty", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

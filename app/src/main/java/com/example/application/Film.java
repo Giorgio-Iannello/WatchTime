@@ -78,4 +78,6 @@ public class Film implements Serializable {
     private String descrizione;
     private String durata;
     private String idVideo;
+
+
 }

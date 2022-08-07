@@ -15,14 +15,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.application.Film;
 import com.example.application.R;
+import com.example.application.ui.bookmark.BookmarkDelegate;
 
 import java.util.ArrayList;
 
 public class FilmSavedAdapter extends RecyclerView.Adapter<FilmSavedAdapter.ViewHolder> {
 
-    public FilmSavedAdapter(ArrayList<Film> listFilm, Context context) {
+    public FilmSavedAdapter(ArrayList<Film> listFilm, Context context, BookmarkDelegate delegate) {
         this.listFilm = listFilm;
         this.context = context;
+        this.delegate=delegate;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -58,7 +60,8 @@ public class FilmSavedAdapter extends RecyclerView.Adapter<FilmSavedAdapter.View
         holder.salvato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                delegate.deleteItem(position);
+                notifyDataSetChanged();
             }
         });
 
@@ -82,5 +85,6 @@ public class FilmSavedAdapter extends RecyclerView.Adapter<FilmSavedAdapter.View
 
         private ArrayList<Film> listFilm;
         private Context context;
+        private BookmarkDelegate delegate;
 }
 
